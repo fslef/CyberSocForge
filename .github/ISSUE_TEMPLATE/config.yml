@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "CyberSocForge Community Discussions page"
+    url: https://github.com/fslef/CyberSocForge/discussions
+    about: "To talk to the community and maintainers of CyberSocForge."
+
