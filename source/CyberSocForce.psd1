@@ -27,13 +27,13 @@ Author = 'Francois Lefebvre'
 CompanyName = 'Francois Lefebvre'
 
 # Copyright statement for this module
-Copyright = '(c) Francois Lefebvre. All rights reserved.'
+Copyright= 'Francois Lefebvre. MIT License.'
 
 # Description of the functionality provided by this module
 Description = 'A Powershell module to facilitate Cybersersecurity governance and and configuration'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '5.1'
+PowerShellVersion = '7.0'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
