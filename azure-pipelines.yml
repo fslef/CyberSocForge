@@ -93,7 +93,7 @@ stages:
               parallel: true
 
       - job: test_windows_core
-        displayName: 'Windows (PowerShell Core)'
+        displayName: 'Windows (PS Core)'
         timeoutInMinutes: 0
         pool:
           vmImage: 'windows-latest'
@@ -241,15 +241,16 @@ stages:
               artifactName: 'CodeCoverageLinux'
               targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
 
-          - task: DownloadPipelineArtifact@2
-            displayName: 'Download Test Artifact Windows (PS 5.1)'
-            inputs:
-              buildType: 'current'
-              artifactName: 'CodeCoverageWinPS51'
-              targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
+          # commented out as it's a Powershell 7 module
+          # - task: DownloadPipelineArtifact@2
+          #   displayName: 'Download Test Artifact Windows (PS 5.1)'
+          #   inputs:
+          #     buildType: 'current'
+          #     artifactName: 'CodeCoverageWinPS51'
+          #     targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
 
           - task: DownloadPipelineArtifact@2
-            displayName: 'Download Test Artifact Windows (PS7)'
+            displayName: 'Download Test Artifact Windows (PS Core)'
             inputs:
               buildType: 'current'
               artifactName: 'CodeCoverageWinPS7'
