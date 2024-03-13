@@ -93,7 +93,7 @@ stages:
               parallel: true
 
       - job: test_windows_core
-        displayName: 'Windows (PowerShell)'
+        displayName: 'Windows (PS Core)'
         timeoutInMinutes: 0
         pool:
           vmImage: 'windows-latest'
@@ -128,41 +128,42 @@ stages:
               artifactName: 'CodeCoverageWinPS7'
               parallel: true
 
-      - job: test_windows_ps
-        displayName: 'Windows (Windows PowerShell)'
-        timeoutInMinutes: 0
-        pool:
-          vmImage: 'windows-latest'
-        steps:
-          - task: DownloadPipelineArtifact@2
-            displayName: 'Download Build Artifact'
-            inputs:
-              buildType: 'current'
-              artifactName: $(buildArtifactName)
-              targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)'
+      # commented out as it's a Powershell 7 module
+      # - job: test_windows_ps
+      #   displayName: 'Windows (Windows PowerShell)'
+      #   timeoutInMinutes: 0
+      #   pool:
+      #     vmImage: 'windows-latest'
+      #   steps:
+      #     - task: DownloadPipelineArtifact@2
+      #       displayName: 'Download Build Artifact'
+      #       inputs:
+      #         buildType: 'current'
+      #         artifactName: $(buildArtifactName)
+      #         targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)'
 
-          - task: PowerShell@2
-            name: test
-            displayName: 'Run Tests'
-            inputs:
-              filePath: './build.ps1'
-              arguments: '-tasks test'
-              pwsh: false
+      #     - task: PowerShell@2
+      #       name: test
+      #       displayName: 'Run Tests'
+      #       inputs:
+      #         filePath: './build.ps1'
+      #         arguments: '-tasks test'
+      #         pwsh: false
 
-          - task: PublishTestResults@2
-            displayName: 'Publish Test Results'
-            condition: succeededOrFailed()
-            inputs:
-              testResultsFormat: 'NUnit'
-              testResultsFiles: '$(buildFolderName)/$(testResultFolderName)/NUnit*.xml'
-              testRunTitle: 'Windows (Windows PowerShell)'
+      #     - task: PublishTestResults@2
+      #       displayName: 'Publish Test Results'
+      #       condition: succeededOrFailed()
+      #       inputs:
+      #         testResultsFormat: 'NUnit'
+      #         testResultsFiles: '$(buildFolderName)/$(testResultFolderName)/NUnit*.xml'
+      #         testRunTitle: 'Windows (Windows PowerShell)'
 
-          - task: PublishPipelineArtifact@1
-            displayName: 'Publish Test Artifact'
-            inputs:
-              targetPath: '$(buildFolderName)/$(testResultFolderName)/'
-              artifactName: 'CodeCoverageWinPS51'
-              parallel: true
+      #     - task: PublishPipelineArtifact@1
+      #       displayName: 'Publish Test Artifact'
+      #       inputs:
+      #         targetPath: '$(buildFolderName)/$(testResultFolderName)/'
+      #         artifactName: 'CodeCoverageWinPS51'
+      #         parallel: true
 
       - job: test_macos
         displayName: 'macOS'
@@ -207,7 +208,7 @@ stages:
           - test_macos
           - test_linux
           - test_windows_core
-          - test_windows_ps
+          # - test_windows_ps
         pool:
           vmImage: 'ubuntu-latest'
         timeoutInMinutes: 0
@@ -240,15 +241,16 @@ stages:
               artifactName: 'CodeCoverageLinux'
               targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
 
-          - task: DownloadPipelineArtifact@2
-            displayName: 'Download Test Artifact Windows (PS 5.1)'
-            inputs:
-              buildType: 'current'
-              artifactName: 'CodeCoverageWinPS51'
-              targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
+          # commented out as it's a Powershell 7 module
+          # - task: DownloadPipelineArtifact@2
+          #   displayName: 'Download Test Artifact Windows (PS 5.1)'
+          #   inputs:
+          #     buildType: 'current'
+          #     artifactName: 'CodeCoverageWinPS51'
+          #     targetPath: '$(Build.SourcesDirectory)/$(buildFolderName)/$(testResultFolderName)'
 
           - task: DownloadPipelineArtifact@2
-            displayName: 'Download Test Artifact Windows (PS7)'
+            displayName: 'Download Test Artifact Windows (PS Core)'
             inputs:
               buildType: 'current'
               artifactName: 'CodeCoverageWinPS7'
@@ -321,4 +323,3 @@ stages:
               GitHubToken: $(GitHubToken)
               ReleaseBranch: $(defaultBranch)
               MainGitBranch: $(defaultBranch)
-
