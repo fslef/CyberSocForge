@@ -5,9 +5,8 @@
     Your contribution to this project is greatly appreciated!
 
     TITLE: Please be descriptive not sensationalist.
-    Prepend the title with the [DscResourceName] if your PR is specific to a DSC resource.
-    Also prepend with [BREAKING CHANGE] if relevant.
-    i.e. [BREAKING CHANGE][xFile] Add security descriptor property
+    Prepend the title with [BREAKING CHANGE] if relevant.
+    i.e. [BREAKING CHANGE] Restructure security data format
 
     You may remove this comment block, and the other comment blocks, but please
     keep the headers and the task list.
@@ -49,15 +48,56 @@
     For those task that don't apply to you PR, leave those as is.
 -->
 
-- [ ] The PR represents a single logical change. i.e. Cosmetic updates should go in different PRs.
+- [ ] The PR represents a single logical change.
 - [ ] Added an entry under the Unreleased section of in the CHANGELOG.md as per [format](https://keepachangelog.com/en/1.0.0/).
 - [ ] Local clean build passes without issue or fail tests (`build.ps1 -ResolveDependency`).
-- [ ] Resource documentation added/updated in README.md.
-- [ ] Resource parameter descriptions added/updated in README.md, schema.mof
-      and comment-based help.
-- [ ] Comment-based help added/updated.
-- [ ] Localization strings added/updated in all localization files as appropriate.
-- [ ] Examples appropriately added/updated.
-- [ ] Unit tests added/updated. See [DSC Resource Testing Guidelines](https://github.com/PowerShell/DscResources/blob/master/TestsGuidelines.md).
-- [ ] Integration tests added/updated (where possible). See [DSC Resource Testing Guidelines](https://github.com/PowerShell/DscResources/blob/master/TestsGuidelines.md).
-- [ ] New/changed code adheres to [DSC Resource Style Guidelines](https://github.com/PowerShell/DscResources/blob/master/StyleGuidelines.md) and [Best Practices](https://github.com/PowerShell/DscResources/blob/master/BestPractices.md).
+- [ ] Documentation added/updated in src/WikiSource.
+- [ ] Comment-based help added/updated to any .ps1 files..
+- [ ] Unit tests added/updated. See [CyberSocForge Module Testing Guidelines](https://github.com/PowerShell/DscResources/blob/master/TestsGuidelines.md).
+- [ ] Integration tests added/updated (where possible). See [CyberSocForge Module Testing Guidelines](https://github.com/PowerShell/DscResources/blob/master/TestsGuidelines.md).
+
+
+
+
+-------------
+# Pull Request
+
+<!--
+Thank you for contributing! Please use a descriptive title and fill out this template to ensure a thorough review process.
+
+**Title Guidelines**: Be clear and succinct. Use the prefix [BREAKING CHANGE] for significant updates.
+
+-->
+
+## PR Description
+
+<!-- Briefly describe your changes, details will be provided in next section -->
+
+### Changes
+<!--
+list the changes as per keepachangelog.com This **should** duplicate what you've updated in the changelog file.`.
+
+### Added
+- New features.
+### Changed
+- Updates to existing functionality.
+### Deprecated
+- Features marked for removal.
+### Security
+- Security fixes.
+### Fixed
+- Bug fixes.
+### Removed
+- Removed features or code.
+-->
+
+## Checklist
+
+- [ ] Single logical change.
+- [ ] Changelog updated (Unreleased section as per keepachangelog.com).
+- [ ] Build passes (`build.ps1 -ResolveDependency`).
+- [ ] Documentation updated in `src/WikiSource`.
+- [ ] Comment-based help in `.ps1` files.
+- [ ] Unit and integration tests updated/added.
+
+<!-- Your contribution is appreciated! - Thank you->
