@@ -8,31 +8,31 @@ CyberSocForge is a user-friendly command-line tool designed to:
 - Assist in improving the cloud security posture
 
 ## 1. Feature Highlights and Benefits
-<to be completed>
+*to be completed soon*
 
 ## 2. Target Audience
-- **Soc Manager:** 
-- **Security Analyst:**
-- **Cybersecurity Architect:**
-- **Compliance Manager:**
+- **Soc Manager:** The Soc Manager can use the CyberSocForge tool to oversee and manage security configurations in complex environments, consolidate security insights, and ensure compliance with cybersecurity standards.
+- **Security Analyst:** The Security Analyst can leverage CyberSocForge to analyze security data, identify vulnerabilities, and assist in improving the overall cloud security posture.
+- **Cybersecurity Architect:** The Cybersecurity Architect can utilize CyberSocForge to assess security configurations, aggregate compliance data across cloud platforms, and implement cybersecurity features to enhance the cloud security architecture.
+- **Compliance Manager:** The Compliance Manager can rely on CyberSocForge to consolidate compliance data, assist in meeting regulatory requirements, and ensure adherence to cybersecurity standards in the cloud environment.
 
 ## 3. Technical Specifications and Requirements
-<requires Powershell V7>
 
-Supported Cloud providers:
-<Azure only, more to come>
+**Technical requirements:**
+- Powershell V7
 
-Devops Tool
-<Azure DevOps planned>
+**Supported Cloud providers:**
+- Azure only  for now
+- more to come when it will be requested
+
+**Devops Tool**
+- Azure DevOps in the backlog
 
 CyberSocForce is also leveraging tooling from other projects:
 - [ImportExcel](https://github.com/dfinke/ImportExcel)
 
 This Powershell module lifecycle is managed using the excellent [Sampler](https://github.com/gaelcolas/Sampler), widely used by the [Powershell DSC Community](https://dsccommunity.org/)
 
-## 4. Call to action
-Ready to elevate your cloud security strategy? Begin with CyberSocForge today and take the first step towards a more secure and compliant cloud environment. Download CyberSocForge from our official download page, and join the community of security professionals who are already benefiting from its advanced features.
+## 4. Call to Action
 
-For additional information, detailed documentation, and community discussions, visit our CyberSocForge Github Discussion page. Here, you can exchange insights, share best practices, and stay updated on the latest features and enhancements. Our dedicated team is continually working to support your security needs, and we welcome feedback and suggestions from our user community.
-
-Whether you’re looking to improve your cloud security posture, ensure compliance, or streamline your security operations, CyberSocForge is here to support you every step of the way. Get started today and join the forefront of cloud security innovation.
+Improve your cloud security with CyberSocForge. Download it from our official page and join a community eager for collaboration. For more information and to engage with others, visit our Github Discussion page. We welcome your contributions, whether solving issues or suggesting improvements. Start with CyberSocForge and start sharing your feedback.
