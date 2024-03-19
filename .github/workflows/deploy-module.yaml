@@ -9,6 +9,7 @@ on:
     tags:
     - '**'
     - '!*preview*'
+  workflow_dispatch:
 env:
   buildFolderName: output
   buildArtifactName: output
