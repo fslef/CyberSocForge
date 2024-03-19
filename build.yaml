@@ -105,8 +105,8 @@ Pester:
   #  - TestQuality
   Tag:
   CodeCoverageThreshold: 85 # Set to 0 to bypass
-  #CodeCoverageOutputFile: JaCoCo_$OsShortName.xml
-  #CodeCoverageOutputFileEncoding: ascii
+  CodeCoverageOutputFile: JaCoCo_$OsShortName.xml
+  CodeCoverageOutputFileEncoding: ascii
   # Use this if code coverage should be merged from several pipeline test jobs.
   # Any existing keys above should be replaced. See also CodeCoverage below.
   # CodeCoverageOutputFile is the file that is created for each pipeline test job.
@@ -118,7 +118,7 @@ Pester:
 # CodeCoverageMergedOutputFile - the file that is created by the merge build task and
 #                                is the file that should be uploaded to code coverage services.
 CodeCoverage:
-CodeCoverageFilePattern: JaCoCo_Merge.xml # the pattern used to search all pipeline test job artifacts
+CodeCoverageFilePattern: JaCoCo_*.xml # the pattern used to search all pipeline test job artifacts
 CodeCoverageMergedOutputFile: JaCoCo_coverage.xml # the file that is created for the merged code coverage
 
 DscTest:
