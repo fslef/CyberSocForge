@@ -21,6 +21,7 @@ env:
   buildFolderName: output
   buildArtifactName: output
   testResultFolderName: testResults
+permissions: write-all
 jobs:
   Build_Stage_Package_Module:
     name: Package Module
