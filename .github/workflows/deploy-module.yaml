@@ -135,11 +135,42 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/
-      - name: Publish Test Results
+      - name: Download Test Artifact macOS
+        uses: actions/download-artifact@v3
+        with:
+          name: CodeCoverageMacOS
+          path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageMacOS/
+      - name: Download Test Artifact Linux
+        uses: actions/download-artifact@v3
+        with:
+          name: CodeCoverageLinux
+          path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageLinux/
+      - name: Download Test Artifact Windows (PS7)
+        uses: actions/download-artifact@v3
+        with:
+          name: CodeCoverageWinPS7
+          path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageWinPS7/
+      - name: Publish MacOs Test Results
+        id: macos-test-results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/NUnit*.xml
+          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/#CodeCoverageMacOS/NUnit*.xml
+          check_name: MacOs Test Results
+      - name: Publish Linux Test Results
+        id: linux-test-results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageLinux/NUnit*.xml
+          check_name: Linux Test Results
+      - name: Publish WinPS71 Test Results
+        id: winps71-test-results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageWinPS7/NUnit*.xml
+          check_name: WinPS71 Test Results
   Deploy_Stage_Deploy_Module:
     name: Deploy Module
     runs-on: ubuntu-latest
