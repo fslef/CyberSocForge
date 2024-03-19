@@ -9,7 +9,7 @@
 BuiltModuleSubdirectory: module
 CopyPaths:
   - en-US
-  - DSCResources
+  # - DSCResources
   # - Modules
 Encoding: UTF8
 # Can be used to manually specify module's semantic version if the preferred method of
@@ -31,7 +31,7 @@ NestedModule:
   DscResource.Common:
     CopyOnly: true
     Path: ./output/RequiredModules/DscResource.Common # relative to , default to '/Modules/'
-    # Destination: './output///Modules/' # or override with path relative to 
+    # Destination: './output///Modules/' # or override with path relative to
     AddToManifest: false
     # include: '*.*'
     Exclude: PSGetModuleInfo.xml
@@ -189,4 +189,3 @@ DscResource.DocGenerator:
   #RemoveProgramFiles: false
   #RemoveWindows: false
   #SetSystemDefault: false
-
