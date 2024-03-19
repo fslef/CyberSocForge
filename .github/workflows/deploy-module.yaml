@@ -72,7 +72,7 @@ jobs:
           name: CodeCoverageLinux
         if: success() || failure()
   Test_Stage_test_windows_core:
-    name: Windows (PowerShell)
+    name: Windows (PS Core)
     runs-on: windows-2022
     needs: Build_Stage_Package_Module
     steps:
@@ -155,7 +155,7 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/#CodeCoverageMacOS/NUnit*.xml
+          nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageMacOS/NUnit*.xml
           check_name: MacOs Test Results
       - name: Publish Linux Test Results
         id: linux-test-results
