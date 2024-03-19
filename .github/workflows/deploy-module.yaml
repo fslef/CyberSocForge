@@ -128,14 +128,14 @@ jobs:
       - Test_Stage_test_windows_core
       - Test_Stage_test_macos
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Download Test Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/
+      # - name: Checkout Code
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
+      # - name: Download Test Artifacts
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/
       - name: Download Test Artifact macOS
         uses: actions/download-artifact@v3
         with:
