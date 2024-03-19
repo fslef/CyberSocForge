@@ -144,10 +144,6 @@ jobs:
       with:
         name: CodeCoverageLinux
         path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageLinux/
-      uses: actions/download-artifact@v3
-      with:
-        name: CodeCoverageWinPS51
-        path: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageWinPS51/
     - name: Download Test Artifact Windows (PS7)
       uses: actions/download-artifact@v3
       with:
@@ -167,12 +163,6 @@ jobs:
       with:
         nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageLinux/NUnit*.xml
         check_name: Linux Test Results
-      id: winps51-test-results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-        nunit_files: ${{ env.buildFolderName }}/${{ env.testResultFolderName }}/CodeCoverageWinPS51/NUnit*.xml
-        check_name: WinPS51 Test Results
     - name: Publish WinPS71 Test Results
       id: winps71-test-results
       uses: EnricoMi/publish-unit-test-result-action@v2
