@@ -119,8 +119,8 @@ Pester:
 # CodeCoverageMergedOutputFile - the file that is created by the merge build task and
 #                                is the file that should be uploaded to code coverage services.
 CodeCoverage:
-CodeCoverageFilePattern: CodeCov_*.xml # the pattern used to search all pipeline test job artifacts
-CodeCoverageMergedOutputFile: CodeCov_Merged.xml # the file that is created for the merged code coverage
+  CodeCoverageFilePattern: CodeCov_*.xml # the pattern used to search all pipeline test job artifacts
+  CodeCoverageMergedOutputFile: CodeCov_Merged.xml # the file that is created for the merged code coverage
 
 DscTest:
   ExcludeTag:
