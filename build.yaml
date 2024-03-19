@@ -48,6 +48,7 @@ BuildWorkflow:
   ".": # "." is the default Invoke-Build workflow. It is called when no -Tasks is specified to the build.ps1
     - build
     - test
+    - merge
 
   build:
     - Clean
@@ -71,8 +72,8 @@ BuildWorkflow:
 
   # Use this task when you have multiple parallel tests, which produce multiple
   # code coverage files and needs to get merged into one file.
-  # merge:
-  # - Merge_CodeCoverage_Files
+  merge:
+  - Merge_CodeCoverage_Files
 
   publish:
     - publish_module_to_gallery
@@ -165,15 +166,15 @@ TaskHeader: |
 ####################################################
 #      DscResource.DocGenerator Configuration      #
 ####################################################
-DscResource.DocGenerator:
-  Generate_Conceptual_Help:
-    MarkdownCodeRegularExpression:
-      - '\`(.+?)\`' # Match inline code-block
-      - '\\(\\)' # Match escaped backslash
-      - '\[[^\[]+\]\((.+?)\)' # Match markdown URL
-      - "_(.+?)_" # Match Italic (underscore)
-      - '\*\*(.+?)\*\*' # Match bold
-      - '\*(.+?)\*' # Match Italic (asterisk)
+# DscResource.DocGenerator:
+#   Generate_Conceptual_Help:
+#     MarkdownCodeRegularExpression:
+#       - '\`(.+?)\`' # Match inline code-block
+#       - '\\(\\)' # Match escaped backslash
+#       - '\[[^\[]+\]\((.+?)\)' # Match markdown URL
+#       - "_(.+?)_" # Match Italic (underscore)
+#       - '\*\*(.+?)\*\*' # Match bold
+#       - '\*(.+?)\*' # Match Italic (asterisk)
 
 ####################################################
 #           Setting Sampler PSModulePath           #
