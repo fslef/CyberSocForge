@@ -68,6 +68,7 @@ BuildWorkflow:
     # pattern of Public, Private, Enum, Classes.
     - Convert_Pester_Coverage
     - Pester_if_Code_Coverage_Under_Threshold
+    - merge
 
   # Use this task when you have multiple parallel tests, which produce multiple
   # code coverage files and needs to get merged into one file.
