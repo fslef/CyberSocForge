@@ -1,5 +1,5 @@
 BeforeAll {
-    $script:dscModuleName = 'CyberSocForce'
+    $script:dscModuleName = 'CyberSocForge'
 
     Import-Module -Name $script:dscModuleName
 }
